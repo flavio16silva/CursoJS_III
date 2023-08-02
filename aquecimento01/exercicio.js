@@ -75,7 +75,7 @@ O nome correto da const (sem abreviação) será revelado na
 próxima aula. 
 */
 
-const np = 2
+const numeroPar = 2
 
 /* 
 06
@@ -95,6 +95,8 @@ de "videoGame".
 
 console.log('----6) Alteração de CONST para LET------')
 let videoGame = 'Xbox'
+
+const outroVideoGame = 'Nintendo'
 
 videoGame = 'Playstation'
 console.log(videoGame)
