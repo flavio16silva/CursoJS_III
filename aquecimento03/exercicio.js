@@ -119,13 +119,33 @@ filmes[3] = ['Thor', 'Arrow', 'He-man']
 console.log(filmes[3])
 console.log(filmes)
 
-
 //propriedades do objeto podem armazenar qualquer tipo de dado.
 //podem armazenar array
 const pokemon = {
   nomes: ['Charizard'],
-  tipos:['Fogo', 'Voador']
+  tipos: ['Fogo', 'Voador']
 }
 pokemon.tipos[1]
 console.log(pokemon.tipos[1])
 
+// ===================================================================================
+//Em JS arrays não existem, nada mais são que objetos:
+//Acessando de 2 formas:
+//atraves da notação de ponto . pokemon.nome   --- mais legivel e mais rapida
+//usando colchetes - pokemon['nome']
+
+// ===================================================================================
+//Tipos de dados que podemos ter em codigos: Primitivos ou objetos
+//Primitivos: number, null, undefined, strng, boolean, bigint, symbol
+//objeto: objetos, arrays, funções
+
+
+// ===================================================================================
+//Quando usar boolean no meu codigo?
+//Quando formos representar algo que é: Verdadeiro(true) ou Falso(false)
+const cidade = {
+  nome: 'bahia',
+  climaAbafado: true
+}
+//acessando o boolean:
+console.log(cidade.climaAbafado) //nomeDoObjeto.propriedade
