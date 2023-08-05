@@ -139,7 +139,6 @@ console.log(pokemon.tipos[1])
 //Primitivos: number, null, undefined, strng, boolean, bigint, symbol
 //objeto: objetos, arrays, funções
 
-
 // ===================================================================================
 //Quando usar boolean no meu codigo?
 //Quando formos representar algo que é: Verdadeiro(true) ou Falso(false)
@@ -149,3 +148,20 @@ const cidade = {
 }
 //acessando o boolean:
 console.log(cidade.climaAbafado) //nomeDoObjeto.propriedade
+
+const EuEstouSentado = true
+console.log(EuEstouSentado)
+
+//array pode armazenar qualquer tipo de valor e também boolean:
+console.log('======= ARRAY COM BOOLEAN ===========')
+const booleans = [true, false, true, false, false, true]
+console.log(booleans[3])
+
+//Exemplo com OBJETO:
+console.log('======= BOOLEAN ===========')
+const game = {
+  nome: 'Final Fantasy XVI - PlayStation 5',
+  estaNoPrime: true
+}
+
+console.log(game.estaNoPrime)
