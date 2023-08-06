@@ -82,7 +82,7 @@ y() //3º - invocada
 
 function pegaNome () {
   const nomes = 'joao'
-   return nomes //exportar valor para fora 
+   return nomes //EXPORTAR valor para fora 
 }
 //A invocação de uma função pode retornar um valor
 //console.log(pegaNome()) //joao
