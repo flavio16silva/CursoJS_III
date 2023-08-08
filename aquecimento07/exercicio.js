@@ -31,7 +31,7 @@ x() //anatomia da invocação de uma arrow function
 
 // console.log(pegaMensagem('Joao'))
 
-//Arroz Function - Exemplo de mudança da função acima
+//Arrow Function - Exemplo de mudança da função acima
 const pegaMensagem = (nome) => `Meu nome é ${nome}` //Direita da seta será executado primeiro. 
 console.log(pegaMensagem('Joao'))
 
