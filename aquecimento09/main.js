@@ -23,13 +23,15 @@ Após consertar, a expressão deve retornar o número 7.
 */
 
 const objs = [
-  { x: 1, y: 2 },
-  { x: 3, y: 4 },
-  { x: 5, y: 6 },
-  { x: 7, y: 8 }
+  { x: 1, y: 2 }, //posição 0
+  { x: 3, y: 4 }, //posição 1
+  { x: 5, y: 6 }, //posição 2
+  { x: 7, y: 8 }  //posição 3
 ]
 
-objs[4].x
+//console.log(objs[4]) //Linha 4 não existe, por isso undefined
+console.log(objs[3].x)
+objs[3].x
 
 /*
 02
@@ -42,17 +44,20 @@ Faça os 2 únicos ajustes necessários para consertar o erro.
 Após consertar, a expressão deve retornar o caractere w.
 */
 
+//Isso é um objeto
 const obj = {
   x: () => 'y',
   y: function () { 
-    'w'
+   return 'w' //inclusão do return
   },
   w () { 
     return 'x'
   }
 }
 
-obj.z()
+//obj.z() //Z não existe
+console.log(obj.y())
+obj.y()
 
 /*
 03
@@ -65,6 +70,15 @@ ser um valor diferente do anterior.
 
 Faça com que uma das invocações retorne true.
 */
+
+//Sempre bom nomear função com verbo
+const eNull = arg => arg === null         //Retorna arg === null
+console.log(eNull())                     //Primeira Invocação: Toda função que não retorna valor, retorna undefined por debaixo dos panos.
+
+console.log(eNull(null))                 //Segunda Invocação: Retorna true
+console.log(eNull({}))                   //Terceira Invocação: Retorna false
+
+
 
 /*
 04
@@ -81,6 +95,19 @@ preenchidos, a função deve retornar a string abaixo:
 3. O retorno da função deve ser a multiplicação dos 3 
 argumentos.
 */
+//Incluir consta para chamada das informações do IF
+const multiplicar = (a, b, c) => {
+  if (a === undefined || b === undefined || c === undefined) {
+      return 'Insira todos os argumentos!'
+  }
+
+  return a * b * c
+}
+
+multiplicar()
+console.log(multiplicar())
+console.log(multiplicar(1, 2))
+console.log(multiplicar(1, 2, 3))
 
 /*
 05
@@ -100,13 +127,21 @@ função.
 */
 
 const y = w => {
-  if (w[2] === false) {
-    if ('b' === w[0]) {
-      if (w[1] === 3) {
-        // console.log('Executou if!')
-      }
-    }
+  const eIgualFalse = w[2] === false           
+  const eIgual3 = 'b' === w[0]
+  const eIgualB = w[1] === 3
+
+  if ( eIgualFalse && eIgual3 && eIgualB ) {  //leitura da condição ficou mais legivel com inclusão de const
+    console.log('Executou if!')
   }
+
+  // if (w[2] === false) {
+  //   if ('b' === w[0]) {
+  //     if (w[1] === 3) {
+  //       console.log('Executou if!')
+  //     }
+  //   }
+  // }
 }
 
 const a = 'b'
@@ -137,6 +172,40 @@ false.
 6. E ainda, se nenhuma das condições acima forem atendidas, 
 retorne null.
 */
+
+//const  eUndefined = arg => arg === undefined
+
+
+
+const somar = (arg1, arg2, arg3) => {
+  if (arg1 !== undefined && arg2 === undefined && arg3 === undefined) {
+    return arg1
+  } 
+
+  if (arg1 !== undefined && arg2 !== undefined && arg3 === undefined) {
+    return arg1 + arg2  
+  }
+
+  if (arg1 !== undefined && arg2 !== undefined && arg3 !== undefined) {
+    return arg1 + arg3
+  }
+
+  if (arg1 === undefined && arg2 === undefined && arg3 === undefined) {
+    return false
+  }
+
+  return null
+
+}
+
+somar()
+console.log(somar(1))
+console.log(somar(1, 2))
+console.log(somar(1, 2, 3))
+console.log(somar())
+
+
+
 
 /*
 07
