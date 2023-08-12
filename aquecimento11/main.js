@@ -25,9 +25,9 @@ invocação da função eUndefined.
 const eUndefined = arg => arg === undefined
 
 const somar = (arg1, arg2, arg3) => {
-  const temSoArg1 = arg1 !== undefined && eUndefined(arg2) && eUndefined(arg3)
-  const temSoArg1E2 = arg1 !== undefined && arg2 !== undefined && eUndefined(arg3)
-  const temTodosArgs = arg1 !== undefined && arg2 !== undefined && arg3 !== undefined
+  const temSoArg1 = !eUndefined(arg1)  && eUndefined(arg2) && eUndefined(arg3)
+  const temSoArg1E2 = !eUndefined(arg1) && !eUndefined(arg2) && eUndefined(arg3)
+  const temTodosArgs = !eUndefined(arg1) && !eUndefined(arg2) && !eUndefined(arg3)
   const temNenhumArg = eUndefined(arg1) && eUndefined(arg2) && eUndefined(arg3)
 
   if (temSoArg1) {
@@ -72,7 +72,24 @@ Dica:
 
 Você pode usar um loop dentro da função. 
 */
+//Na função abaixo é possivel eliminar a MUTAÇÃO. Como fazemos isso?
+//Eliminando a let e aplicando um return
 
+const pegaNomeConcurso  = id => {
+  //let nomeConcurso = ''          //Indica que o tipo de dado armazenado é STRING. Colocada fora do for, para que a cada execução do for ela não seja limpada da memoria e consiga armazenar os valores a cada execução do for. 
+
+  for (let i = 0; i < concursos.length; i++) {
+    if (id === concursos[i].id) {       //concursos: é o array abaixo a ser recebido. Comparando a STRING do id da função com o id da string do objeto, dentro do array. 
+    //nomeConcurso = concursos[i].nome //nome do concurso do objeto**** 
+    return concursos[i].nome
+  }
+}
+  //return nomeConcurso || 'Concurso não encontrado'*** //a esquerda sendo true é retornado, mas se nomeConcurso retornar uma string vazio é false, retornará: Concurso não encontrado que esta a direita. 
+  
+  return 'Concurso não encontrado'
+
+}
+// ----------------- ARRAY dos IDs ----------------------------------
 const concursos = [
   { id: 'ysdyhsa8a', nome: 'Concurso Loteria XPTO' },
   { id: '7yerdf8fk', nome: 'Concurso Proibido Dançar Mas se Quiser Pode' },
@@ -81,12 +98,28 @@ const concursos = [
   { id: 'd687jsfke', nome: 'Concurso Programadores Garotos de Programa' },
 ]
 
+//Use todos os ids do array concursos para testar a função. 
+  for(let i = 0; i < concursos.length; i++ ) {
+    console.log(pegaNomeConcurso(concursos[i].id))    
+  }
+
+  //Teste também o caso onde o concurso não existe no array.
+    console.log(pegaNomeConcurso()) //Concurso não encontrado
+
 /*
 03
 
 Refatore a função abaixo para apenas uma única linha.
 */
+//Esta função retornará string sim ou não baseado no retorno do IF
+// ================= ANTES: REFATORADO =========================
+const eAMelhorSerie = serie => serie === 'Breaking Bad' ? '✅ Sim' : '❌ Não'
+console.log(eAMelhorSerie('Breaking Bad'))
+console.log(eAMelhorSerie('Game of Thrones'))
 
+
+// ================= DEPOIS =========================
+/*
 const eAMelhorSerie = serie => {
   if (serie === 'Breaking Bad') {
     return '✅ Sim'
@@ -97,6 +130,9 @@ const eAMelhorSerie = serie => {
 
 eAMelhorSerie('Breaking Bad')
 eAMelhorSerie('Game of Thrones')
+//console.log(eAMelhorSerie('Breaking Bad'))
+//console.log(eAMelhorSerie('Game of Thrones')) 
+*/
 
 /*
 04
@@ -117,6 +153,17 @@ Para obter a média, basta dividir a soma total dos custos
 pela quantidade de meses.
 */
 
+const pegaMedia = custos => { //custos é declarado como parametro.
+  let soma = 0
+
+  for(let i = 0; i < custos.length; i++) {
+    soma += custos[i].custoTotal          //acessando o array, pegando a propriedade dentro do objeto
+  }
+
+  return soma / custos.length           //custos.length: total de custos do objeto
+
+}
+// ----------------- ARRAY ----------------------------------
 const custos = [
   { mes: 'janeiro', custoTotal: 5672 },
   { mes: 'fevereiro', custoTotal: 2357 },
@@ -124,6 +171,9 @@ const custos = [
   { mes: 'abril', custoTotal: 6325 },
   { mes: 'maio', custoTotal: 6748 },
 ]
+
+pegaMedia(custos)                      //invocando a função com o parametro custos
+console.log(`A média é ${pegaMedia(custos)}`)
 
 /*
 05
@@ -136,9 +186,20 @@ A função deve retornar um array.
 
 Teste a função utilizando o array abaixo.
 */
+const filtraPalavras = palavras => {
+  const filtradas = []
 
+  for (let i = 0; i < palavras.length; i++) {
+    if (palavras[i].length > 3) {
+      filtradas.push(palavras[i])
+    }
+  }
+  return filtradas
+}
 const palavras = ['ovo', 'áudio', 'oi', 'telefones', 'ovni']
 
+filtraPalavras(palavras)                   //invocando a função
+console.log(filtraPalavras(palavras))
 /*
 06
 
