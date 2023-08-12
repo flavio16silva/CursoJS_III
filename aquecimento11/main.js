@@ -186,7 +186,7 @@ A função deve retornar um array.
 
 Teste a função utilizando o array abaixo.
 */
-const filtraPalavras = palavras => {
+const filtraPalavras = palavras => {  //parametro: palavras
   const filtradas = []
 
   for (let i = 0; i < palavras.length; i++) {
@@ -222,8 +222,9 @@ const dobrar = numeros => {
 
   for (let i = 0; i < numeros.length; i++) {
     numerosDobrados.push(numeros[i] * 2)
-    return numerosDobrados
+    //return numerosDobrados                  //erro localizado - Return é palavra chave de função
   }
+  return numerosDobrados                     //Só executará depois que o loop do FOR for totalmente executado. 
 }
 
-// console.log(dobrar([1, 2, 3]))
+console.log(dobrar([1, 2, 3]))
