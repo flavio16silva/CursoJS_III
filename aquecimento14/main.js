@@ -30,10 +30,13 @@ de person2.
 As duas condições devem retornar true.
 */
 
+
+//Quando tenho objeto aninhado e uso SPREAD o objeto não foi copiado e sim referenciado.
+//Para realmente copiar o que fazer
 const person = {
   name: 'João Almeida',
   age: 29,
-  address: {
+  address: {                         //aqui estão como tipos primitvos dentro do objeto
     street: 'Rua Minas Gerais',
     city: 'São Paulo',
     state: 'São Paulo'
@@ -42,10 +45,19 @@ const person = {
 
 const person2 = {
   ...person,
-  name: 'Joana Cruz'
+  name: 'Joana Cruz',
+  address: {
+    ...person.address,                           //tem todas as propriedades. espalhou as copias das propriedades street, city e state. São tipos primitivos 
+    street:'Rua Rio de Janeiro'                  //Subscrevendo a propriedade street com o desejado
+  }
 }
 
 person2.address.street = 'Rua Rio de Janeiro'
+//console.log(person2.address)
+//console.log(`Rua de ${person.name}: ${person.address.street}`)
+//console.log(`Rua de ${person2.name}: ${person2.address.street}`)
+//console.log(person.address.street !== person2.address.street)       //Duas strings diferentes
+//console.log(person.address !== person2.address)                     //Dois objetos diferentes em memoria
 
 /*
 02
@@ -73,6 +85,24 @@ const getHeroes = () => [
   { name: 'Spider-Man', realName: 'Peter Parker', gender: 'Male' }
 ]
 
+const getMessage = arr => {
+  let message = ''                   //para identificar que essa let irá receber uma string   
+  
+  arr.forEach(({name, realName, gender}, i) => {
+      const heroGender = gender === 'Male' ? 'heroi' : 'heroína' //verificando o genero do heroi ou heroina
+      const preposition = gender === 'Male' ? 'do' : 'da'        //verificando a preposição 'do' e 'da'
+
+      message += `O nome ${preposition} ${heroGender} no ${i + 1}º item ${name} e seu nome verdadeiro é ${realName} \n ` //montagem de forma dinâmica 
+
+  })
+
+  return message 
+
+}
+
+const heroes = getHeroes()
+//console.log(getMessage(heroes))
+
 /*
 03
 
@@ -86,6 +116,12 @@ Evite a repetição de "arr[index]" em seu código.
 */
 
 const objs = [{ id: 3, code: 31 }, { id: 7, code: 21 }]
+
+const multiply = /*arr*/([{id}, {code}]) => {          //recebendo array como parametro. Mas fazendo destructing podemos alterar os nomes do arr para item1 e item2. 
+  return id * code                              //E tb fazendo um destructing de um objeto na linha acima
+}
+
+//console.log(multiply(objs))
 
 /*
 04
@@ -105,11 +141,13 @@ const getfruitBenefits = fruit => {
     banana: 'Auxilia a regular o sistema nervoso e o aparelho digestivo.',
     uva: 'Rica em carboidratos, altamente energética.'
   }
-
-  return fruits.fruit || 'Não há informações da fruta =/'
+  //bastou inserir colchetes e tirar o ponto: fruits.fruit 
+  return fruits[fruit] || 'Não há informações da fruta =/' //por debaixo dos panos no JS ocorre isso: return fruits['uva']
 }
 
-const benefits = getfruitBenefits('uva')
+const benefits = getfruitBenefits('uva')    //essa string é passada como parametro para a função
+
+//console.log(benefits)
 
 /*
 05
@@ -134,7 +172,7 @@ const updateInfo = product => {
   const action = name.includes('size-') ? 'UPDATE_SIZE' : 'UPDATE_FIELD'
   const fieldName = name.includes('size-') ? name.replace('size-', '') : name
 
-  return { type: action, payload: { fieldName: value } }
+  return { type: action, payload: { [fieldName]: value } }  //inserimos colchetes no fieldName
 }
 
 const product = updateInfo({ 
@@ -144,31 +182,35 @@ const product = updateInfo({
   }
 })
 
+//console.log(product)
+
 /*
 06
 
 O código abaixo está funcionando e é de um exercício que 
 fizemos anteriormente. 
 
-Renomeie o que está em português para inglês.
+======== Renomeie o que está em português para inglês =========== .
 */
 
-const pegaRespostasUsuario = () => ['A', 'B', 'A', 'D']
+const getUserAnswers = () => ['A', 'B', 'A', 'D']
 
-const pegaPontuacao = respostasUsuario => {
-  const ultimaResposta = respostasUsuario[3]
+const gScore = uAnswers => {
+  const lastAnswer = uAnswers[3]
 
-  if (ultimaResposta === 'A') {
+  if (lastAnswer === 'A') {
     return 50
-  } else if (ultimaResposta === 'C') {
+  } else if (lastAnswer === 'C') {
     return 25
   } else {
     return 100
   }
 }
 
-const respostasUsuario = pegaRespostasUsuario()
-const pontuacao = pegaPontuacao(respostasUsuario)
+const uAnswers = getUserAnswers()
+const scor = gScore(uAnswers)
+
+//console.log(score)
 
 /*
 07
@@ -181,3 +223,23 @@ Dicas:
 Você pode substituir if, else if e else por uma estrutura 
 de dados e acessar os dados de forma dinâmica.
 */
+
+const getScore = userAnswers => {
+  const lastAnswer = userAnswers[userAnswers.length - 1]
+  const obj = {A: 50, C: 25}
+
+  return obj[lastAnswer] || 100
+
+  // if (lastAnswer === 'A') {
+  //   return 50
+  // } else if (lastAnswer === 'C') {
+  //   return 25
+  // } else {
+  //   return 100
+  // }
+}
+
+const userAnswers = getUserAnswers()
+const score = getScore(userAnswers)
+
+console.log(score)
