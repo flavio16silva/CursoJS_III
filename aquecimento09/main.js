@@ -95,7 +95,7 @@ preenchidos, a função deve retornar a string abaixo:
 3. O retorno da função deve ser a multiplicação dos 3 
 argumentos.
 */
-//Incluir consta para chamada das informações do IF
+//Incluir const para chamada das informações do IF
 const multiplicar = (a, b, c) => {
   if (a === undefined || b === undefined || c === undefined) {
       return 'Insira todos os argumentos!'

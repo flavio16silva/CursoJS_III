@@ -112,13 +112,13 @@ const concursos = [
 Refatore a função abaixo para apenas uma única linha.
 */
 //Esta função retornará string sim ou não baseado no retorno do IF
-// ================= ANTES: REFATORADO =========================
+// ================= DEPOIS: REFATORADO =========================
 const eAMelhorSerie = serie => serie === 'Breaking Bad' ? '✅ Sim' : '❌ Não'
 console.log(eAMelhorSerie('Breaking Bad'))
 console.log(eAMelhorSerie('Game of Thrones'))
 
 
-// ================= DEPOIS =========================
+// ================= ANTES =========================
 /*
 const eAMelhorSerie = serie => {
   if (serie === 'Breaking Bad') {
