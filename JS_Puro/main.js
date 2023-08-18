@@ -6,8 +6,10 @@
 
   Dica: pesquise por remainder operator (%).
 */
-
+console.log('==== 01 ====')
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
+const num = randomNumbers.filter(item => item % 2 !== 0)  //Ou 2 === 1
+console.log(num)
 
 /*
   02
@@ -15,18 +17,36 @@ const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
   - Exiba no console quantos números abaixo de 501 o array abaixo possui.
 */
 
+console.log('==== 02 ====')
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
+const menor = crazyNumbers.reduce((acc, crazyNumber) => {
+  //OU return crazyNumber < 501 ? acc + 1 : acc, 0
+    if (crazyNumber < 501) {
+      return acc + 1
+    }
+    return acc
+}, 0)
+
+console.log(menor)  
+
+/*
+Minha forma
+const menor = crazyNumbers.filter(valor => valor < 501)
+console.log(menor)  
+*/
 
 /*
   03
 
-  - Gere um novo array com cada um dos números abaixo elevados ao quadrado e 
-    exiba o novo array no console.
+  - Gere um novo array com cada um dos números abaixo elevados ao quadrado e exiba o novo array no console.
   
   Dica: pesquise por exponentiation operator (**).
 */
-
+console.log('==== 03 ====')
 const numbers = [5, 7, 3]
+const expo = numbers.map(item => item ** 2)
+console.log(expo)
+
 
 /*
   04
@@ -35,7 +55,7 @@ const numbers = [5, 7, 3]
     lançados antes do ano 2000;
   - Exiba o novo array no console.
 */
-
+console.log('==== 04 ====')
 const tarantinoMovies = [
   { name: 'Bastardos inglórios', release: 2009 },
   { name: 'Pulp Fiction', release: 1994 },
@@ -49,13 +69,16 @@ const tarantinoMovies = [
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
 
+const movies = tarantinoMovies.filter(filme => filme.release < 2000)
+console.log(movies)
+
 /*
   05
 
   - Gere um novo array que contém apenas os nomes das séries abaixo;
   - Exiba o novo array no console.    
 */
-
+console.log('==== 05 ====')
 const tvShows = [
   { name: 'Breaking Bad', releaseYear: 2008 },
   { name: 'Mr. Robot', releaseYear: 2015 },
@@ -65,6 +88,11 @@ const tvShows = [
   { name: 'House M.D.', releaseYear: 2004 },
   { name: 'Watchmen', releaseYear: 2019 }
 ]
+
+const show = tvShows.map((tvshow) => tvshow.name)    // ou (({name}) => name), usando destruction
+console.log(show)
+  
+
 
 /*
   06
@@ -76,7 +104,7 @@ const tvShows = [
   Dica: para quebrar linha, você pode usar dentro da string o caractere 
   especial \n.
 */
-
+console.log('==== 06 ====')
 const cart = [
   { name: 'Dark Souls III', price: 95.03 },
   { name: 'Shadow of the Tomb Raider', price: 101.19 },
@@ -84,6 +112,13 @@ const cart = [
   { name: 'Resident Evil 2', price: 119.90 },
   { name: 'Death Stranding', price: 149.99 }
 ]
+
+const productList = cart.reduce((acc, product) => {       // Primeiro e Segundo Parametros
+  // ((acc, {name}) => ${acc}- ${name}\n, '')
+  return `${acc}- ${product.name}\n`
+}, '')
+
+console.log(productList)
 
 /*
 - Nome 1
