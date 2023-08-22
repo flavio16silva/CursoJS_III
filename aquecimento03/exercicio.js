@@ -35,6 +35,7 @@ compras[1 + 1]
 console.log(compras[1 + 1])
 
 //Podemos substituir um item no array. Subscrevendo o item numa determinada posição.
+console.log('---- compras ------')
 compras[0] = 'limão'
 console.log(compras[0])
 console.log(compras)
@@ -88,6 +89,7 @@ const serie = [
 ]
 
 //Obtendo nome da segunda serie do objeto:
+console.log('------serie -------')
 console.log(serie[1])
 //essa expressao retornou um objeto, e encadeando a propriedade: nome
 console.log(serie[1].nome) //impressao do nome
@@ -110,7 +112,8 @@ const filmes = [
   ['Avengers', 'Iron Man', 'Captain America'],
   ['Flash', 'Superman', 'X-MEN']
 ]
-//Array dentro de arrar, chamamos de array multidimensional ou aninhamento de array.
+//Array dentro de array, chamamos de array multidimensional ou aninhamento de array.
+console.log('-- Array de arrays ----')
 filmes[2]
 console.log(filmes[2][1][0]) //superman, pegando S
 
@@ -121,6 +124,7 @@ console.log(filmes)
 
 //propriedades do objeto podem armazenar qualquer tipo de dado.
 //podem armazenar array
+console.log('-- podem armazenar array ----')
 const pokemon = {
   nomes: ['Charizard'],
   tipos: ['Fogo', 'Voador']
@@ -136,7 +140,7 @@ console.log(pokemon.tipos[1])
 
 // ===================================================================================
 //Tipos de dados que podemos ter em codigos: Primitivos ou objetos
-//Primitivos: number, null, undefined, strng, boolean, bigint, symbol
+//Primitivos: number, null, undefined, string, boolean, bigint, symbol
 //objeto: objetos, arrays, funções
 
 // ===================================================================================

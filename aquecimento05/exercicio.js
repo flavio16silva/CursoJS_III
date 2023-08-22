@@ -50,16 +50,16 @@ console.log(nome()) //undefined: representa a falta de um valor
 console.log(nome) //não executa a função
 
 //====== Pratica ===========
-
+console.log('====== Pratica ===========')
 let numero = 1
 function incrementa () {
    numero++
 }
 
-incrementa() //sempre invocar a função - 2
-//Invocando mais vezes
-incrementa() //- 3
-incrementa() //- 4
+incrementa() //sempre invocar a função. Resposta: 2
+//Invocando mais vezes: Sempre mais um
+incrementa() // Resposta: 3
+incrementa() // Resposta: 4
 console.log(numero)
 
 //A declaração de uma função de cria escopo

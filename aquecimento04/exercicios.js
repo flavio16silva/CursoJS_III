@@ -15,7 +15,7 @@ const game = {
 }
 console.log(game.nome) //aqui vemos uma "expressão" que retorna um valor
 
-//Para o JS não exsite problemas em espaços em branco
+//Para o JS não existe problemas em espaços em branco
 console.log(7 + 3)
 console.log(10 * 2)
 
