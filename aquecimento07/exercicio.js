@@ -24,12 +24,16 @@ const x = () => {
 x() //anatomia da invocação de uma arrow function
 
 //============ Transformar uma function tradicional numa Arroz Function ============
-//function tradicional:
-// function pegaMensagem (nome) {
-//   return `meu nome é ${nome}`
-// }
+/*
 
-// console.log(pegaMensagem('Joao'))
+function tradicional:
+ function pegaMensagem (nome) {
+  return `meu nome é ${nome}`
+ }
+
+ console.log(pegaMensagem('Joao'))
+ */
+
 
 //Arrow Function - Exemplo de mudança da função acima
 const pegaMensagem = (nome) => `Meu nome é ${nome}` //Direita da seta será executado primeiro. 
@@ -57,7 +61,7 @@ const pegaObj = (param1, param2) => ({ //inclusão dos parenteses
 })
 console.log(pegaObj(1, 2))
 
-//Retorno implicito só funciona uma apenas uma expressao ao lado direito da seta
+//Retorno implicito só funciona em apenas uma expressao ao lado direito da seta
 
 //nome é o parametro
 //Quando vc tem uma função de parametro único pode tirar os parenteses 

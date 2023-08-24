@@ -5,7 +5,7 @@
 const x = 3
 const resultado = x === 3
 
-console.log(!resultado)
+console.log(resultado)
 
 // Valores Falsy/falsey e Truthy
 const usuario = null               //Nesse caso null não é um boolean

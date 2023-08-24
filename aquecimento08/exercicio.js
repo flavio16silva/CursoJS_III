@@ -71,8 +71,8 @@ const objetos2 = {
   prop: 1
 }
 
-console.log(objetos)
-console.log(objetos2)
+console.log('Esse é o objeto inicial:', objetos)
+console.log('Esse é o objeto final:', objetos2)
 
 
 // ==============  Quando podemos usar o tipo primitivo: null em JS ========================
@@ -86,14 +86,14 @@ if (idade >= 18) {
 } else {
   eMaiorDeIdade = false
 }
-console.log(eMaiorDeIdade)
+console.log('resposta:', eMaiorDeIdade)
 
 //Quando recebemos um valor externo:
 let user = null //quando é um usuario não autenticado
 
 //Resetar o valor da variavel
 eMaiorDeIdade = null
-console.log(eMaiorDeIdade)
+console.log('quando reseta valor de null:', eMaiorDeIdade)
 
 //Não é necessário o uso de null na maioria dos casos
 
@@ -115,16 +115,19 @@ console.log(pegaMaioridade(idade2)) //false
 // Variavel seja iniciado em algum valor, para depois ser inserido valor nela. 
 
 //Exemplo 1:
+console.log('Exemplo 1')
 let A
 console.log(A)
 
 //Exemplo 2:
 //quando um parametro é declarado e não é passado no argumento ou na invocação da função. Esse parametro automaticamente recebe undefined
+console.log('Exemplo 2')
 const e = f => console.log(f)
 e()
 
 //Exemplo 3:
 // quando uma função ou um metodo não retorna valor explicitamente
+console.log('Exemplo 3')
 const pegaEmail = email => {      //retornando a string explicitamente atraves da palavra return
   /*return*/ `o email é ${email}` // nesse modo retorna undefined, porque não retorna valor
  } 
@@ -134,6 +137,7 @@ console.log(console.log(7)) //Invocação do metodo console.log não irá retorn
 
 //Exemplo 4:
 //Tenta acessar uma propriedade em um objeto ou item inexistente num array
+console.log('Exemplo 4')
 const musica = {
   nome: 'Tudo indo',
   banda: 'Do nada'

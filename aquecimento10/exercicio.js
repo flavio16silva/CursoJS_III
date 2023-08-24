@@ -18,9 +18,9 @@ console.log(result)// 0 - 0 && 1
 
 //Curto Circuito - Operador ||
 console.log('----------- Curto Circuito - Operador || --------------')
-const res = true || false
+const res = false || true
 console.log(res) //true - false || true
-console.log(res) //false - true || false
+console.log(res) //true - true || false
 
 //Valores não são booleans
 console.log('----------- Curto Circuito - Operador Não Booleans --------------')
@@ -81,14 +81,14 @@ if (pessoa.sexo === "Masculino") {          //Condição
 console.log('----------- Estrutura de Repetição - FOR  ou LOOP --------------')
 //const numeros = [1, 2, 3, 4, 5]
 //const retorno = numeros[0] + numeros[1] + numeros[2]
-//console.log(retorno)
+//console.log(retorno) //6
 
 //Propriedade: Length - comprimento, quantidade
 //numeros.length
-//console.log(numeros.length)
+//console.log(numeros.length) //5, quantidade de itens no array
 
 for (let i = 0; i < 3; i++) {
-      console.log(i)
+      console.log('i: ', i)
 }
 
 //let i = 0 - Inicialização de um contador
@@ -97,7 +97,7 @@ for (let i = 0; i < 3; i++) {
 
 /*
 1º execução
-let i = 0
+let i = 0 
 i < 3 = true
 código do bloco executado
 i++
@@ -128,7 +128,7 @@ for (let i = 0; i < numeros.length; i++) {   //numeros.length retornará 5 que �
     
 }
 //Retorno fora do loop só é executado depois que o for termina de ser executado
-console.log(resultados)
+console.log('resultados:', resultados)
 
 //Ter cuidado com loop infinito - loop que nunca para de ser executado. 
 //Array é um objeto disfarçado, por debaixo dos panos. 
@@ -139,7 +139,10 @@ console.log(resultados)
 const num = [1, 2, 3]
 //1º forma: num[3] = 4
 //2º forma: num[num.length] = 4
+//num[3] = 4
+
+console.log('valor do array num original: ', num)
 num.push(4) //Forma correta
-console.log(num)
-console.log(num.push(5)) //Empurrando um item para o final do array
-console.log(num)
+console.log('valor do array num(forma correta) após push: ', num)
+console.log('valor do array empurrado:', num.push(5)) //Empurrando um item para o final do array
+console.log('valor do array após o push:', num)
