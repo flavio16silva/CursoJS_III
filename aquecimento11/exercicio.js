@@ -3,7 +3,7 @@
 //Quando forEach pode ser usado? 
 //Quando para cada item de array é preciso usar efeito colateral
 //efeito colateral - qualquer mudança externa de estado. 
-       //Ex.: Dentro de uma função, modificar algum valor que esteja do fora da função.
+       //Ex.: Dentro de uma função, modificar algum valor que esteja fora da função.
 
        //Ex.: de efeito colateral com função
 const obj = { prop: 'x'}
@@ -22,7 +22,7 @@ console.log(obj.prop)
     resultado += numeros[i]
  }
 
- console.log(resultado)                  //Depois declarado com seis, houve mudança. 
+ console.log('resultado: ', resultado)                  //Depois declarado com seis, houve mudança. 
  
  //-------------------- Como o forEach funciona ----------------------------------
  /*
@@ -92,7 +92,7 @@ const e = (item, index, array) => {
   console.log('item:', item, 'index:', index, 'array:', array)   
   
 }
-console.log(e)                //atraves de 'e' tenho acesso a função
+console.log('acesso a função:', e)                //atraves de 'e' tenho acesso a função
 dados.forEach(e)              //aqui 'e' me dá função que armazena
 
 
