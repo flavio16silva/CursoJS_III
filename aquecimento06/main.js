@@ -239,7 +239,7 @@ return x * 2
 }
 
 dobrar(2) //esse valor da invocação é recebido por 'x' lá no parametro
-console.log(dobrar(2))
+console.log('dobrar:', dobrar(2))
 dobrar(3)
 console.log(dobrar(3))
 

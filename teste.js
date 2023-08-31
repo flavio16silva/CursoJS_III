@@ -31,3 +31,17 @@ const obj20 = structuredClone(obj)
 console.log('prop3 do obj2:', obj20.prop3)
 console.log('prop3 do obj:', obj.prop3)
 console.log(obj.prop3 === obj20.prop3) 
+
+
+// ===================CURSO B7WEB======================
+console.log('=============== CURSO B7WEB =============')
+const nomeCarro = 'Ferrari'
+console.log(nomeCarro)
+
+const precoBolo = 19.99
+console.log('R$', precoBolo)
+
+let cidade = 'São Paulo'
+console.log(cidade)
+
+
