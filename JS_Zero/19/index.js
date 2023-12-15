@@ -42,7 +42,22 @@ objeto.metodo(7)
 const objt = {
   prop: 'valor',
   metodo (x) {
-    console.log(this.prop)
+    //console.log(this.prop)
+    this.prop = x
   }
 }  
 objt.metodo(7)
+console.log(objt.prop)
+
+//Em vez de modificar um objeto original, criar um novo objeto. Sem THIS e sem METODO.
+const abc = {
+  prop: 'valor',
+  prop2: 'valor 2'
+}
+
+const abc2 = { 
+  ...abc,
+  //subscrevendo uma propriedade
+  prop: 1
+}
+console.log(abc2)
