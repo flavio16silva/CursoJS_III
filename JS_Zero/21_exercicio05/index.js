@@ -170,7 +170,31 @@ false.
 6. E ainda, se nenhuma das condições acima forem atendidas, 
 retorne null.
 */
+const somar = (arg1, arg2, arg3) => {
+  if (arg1 !== undefined && arg2 == undefined && arg3 == undefined){
+    return arg1
+  }
 
+  if (arg1 !== undefined && arg2 !== undefined && arg3 === undefined) {
+    return arg1 + arg2
+  }
+
+  if (arg1 !== undefined && arg2 !== undefined && arg3 !== undefined){
+    return arg1 + arg3
+  }
+
+  if (arg1 === undefined && arg2 === undefined && arg3 === undefined){
+    return false
+  }
+
+  return null 
+}
+
+console.log(somar(1))
+console.log(somar(1, 2))
+console.log(somar(1, 2, 3))
+console.log(somar())
+console.log(somar(undefined, 1, 2))
 /*
 07
 
